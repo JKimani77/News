@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+<!-- Navbar block  --> 
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/newsatnine.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 heading">
+            <h1> {{name}} </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for item in news_article %}
+        <div class="col-sm-12">
+            <div class="img-box mb-4">
+                <a href={{item.url}} target="_blank">
+                    <img class="thumbnail img-el img-fluid" src={{item.urlToImage}} alt="IMAGE LOADING...">
+                </a>
+            </div>
+            <div class="news">
+                <h4 class="text-bold"> {{item.title}} </h4>
+                <p>Posted by
+                    <span class="text-muted date-author">{{item.author}}</span>
+                   
+                </p>
+                <p> {{item.description}} -----
+                    <a href={{item.url}} target="_blank"><button type="button" class="btn btn-outline-primary">Go to site</button></a>
+                </p>
+                <hr>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

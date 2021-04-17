@@ -15,12 +15,8 @@ def home():
     technology = getnewsources('technology')
 
     title = 'NOTBBCNEWS'
-    searchnews = request.args.get('news_querry')
 
-    if searchnews:
-        return redirect(url_for('.search',search_name = searchnews))
-    else:
-        return render_template('home.html', title = title, business = business, sports = sports, entertainment = entertainment, technology = technology,health = health, science = science)
+    return render_template('home.html', title = title, business = business, sports = sports, entertainment = entertainment, technology = technology,health = health, science = science)
 
     
 @main.route('/article/<news_id>')
