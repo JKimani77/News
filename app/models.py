@@ -1,6 +1,6 @@
 class Newssourcemodel:
 
-    def __init__(self,id,title,overview,news_image,person_posted,time_posted)
+    def __init__(self,id,title,overview,news_image,person_posted,time_posted):
         self.id = id
         self.title = title
         self.overview = overview
@@ -13,7 +13,7 @@ class Newsarticlemodel:
 
     all_articles = []
 
-    def __init__(self,article_id, title, article_image,article_description )
+    def __init__(self,article_id, title, article_image,article_description ):
         self.article_id = article_id
         self.title = title
         self.article_image = article_image

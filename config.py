@@ -2,7 +2,8 @@ import os
 
 class Config:
  
-    NEWX_API_BASE_URL = 'https://api.themoviedb.org/3/movie/{}?api_key={}'
+    NEWX_API_BASE_URL = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'
+    NEWX_ARTICLES_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
     NEWX_API_KEY = os.environ.get('NEWX_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
