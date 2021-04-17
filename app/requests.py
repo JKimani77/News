@@ -43,7 +43,7 @@ def process_newssources(news_list):
     newsresults = []
     for i in news_list:
         id = i.get('id')
-        title = i.get(title)
+        name = i.get('name')
         overview = i.get('overview')
         news_image = i.get('news_image')
         person_posted = i.get('person_posted')
