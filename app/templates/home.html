@@ -19,55 +19,76 @@
         {% else %}
         <title> Welcome to NOTBBCNEWS </title>
         {% endif %}
+          
     </head>
 
         <!-- Content block -->
         {% block content %}
     <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
         <div class="bassssssss">
             <div class="container">
                 <form>
                     <input type="text" name="news_query" placeholder="Search for news" class="form-control">
                     <input type="submit"  value="Submit" class="btn btn-default">
                 </form>
+                
             
             </div>
+            <br>
+                <br>
             
-            <!-- businessnews -->
-            <h3> Business News</h3>
+            <div class="card">
+                <!-- businessnews -->
+            <u><h3> Business News</h3></u>
             <ul>
                 {{ macro.displayNewsList(business)}}
             </ul>
+            </div>
+            <hr>
+
+            <br>
+            <u></u>
 
             <!--healthnews  -->
-            <h3> Health News </h3>
+            <u><h3> Health News </h3></u>
             <ul>
                 {{ macro.displayNewsList(health)}}
             </ul>
+            <hr>
 
             <!-- technews -->
-            <h3>Technology News</h3>
+            <u><h3>Technology News</h3></u>
             <ul>
                 {{ macro.displayNewsList(technology)}}
             </ul>
+            <hr>
 
             <!-- sciencesnews -->
-            <h3> Science News</h3>
+            <u><h3> Science News</h3></u>
             <ul>
                 {{ macro.displayNewsList(science)}}
             </ul>
+            <hr>
 
             <!-- entertainmentnews -->
-            <h3> Entertainment News</h3>
+            <u><h3> Entertainment News</h3></u>
             <ul>
                 {{ macro.displayNewsList(entertainment)}}
             </ul>
+            <hr>
             
             <!-- sportsnews -->
-            <h3> Sports News</h3>
+            <u><h3> Sports News</h3></u>
             <ul>
                 {{ macro.displayNewsList(sports)}}
             </ul>
+            <hr>
     
         </div>
     </body>

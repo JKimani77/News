@@ -1,14 +1,52 @@
-{% macro displayNewsList(news_list) %}
+{% extends 'bootstrap/base.html'%}
 
-    {% for i in news_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-            <img src="{{ i.news_image }}" alt="{{ i.name }} poster" class="img-responsive">
-            <li class="text-center">
-                <a href="/news/{{i.id}}">
-                    {{ i.name|truncate(30)}}</a>
-            </li>
+<!-- Styles block -->
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NOTBBCNEWS</title>
+
+
+</head>
+
+<body>
+    {% macro displayNewsList(category) %}
+    <div class="container">
+        <div class="row">
+            {% for item in category %}
+            <div class="col-md-6">
+                <div class="card-body">
+                    <li>{{ item.title | truncate(150)}}</li>
+                    <p class="card-header"><b>{{item.name}}</b> ----{{item.description}}<br>
+
+                        <br>
+
+                        <a href=""><button type="button" class="btn btn-light">Read
+                            Articles</button></a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
         </div>
 
-    {% endfor %}
 
-{% endmacro %}
+    </div>
+    </div>
+
+
+
+
+    {% endmacro %}
+</body>
+
+</html>

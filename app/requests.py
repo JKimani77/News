@@ -1,4 +1,5 @@
 import urllib.request, json
+import json
 from .models import Newssourcemodel
 
 
@@ -27,8 +28,8 @@ def getnewsources(category):
 
         newsresults = None
 
-        if get_newsresponse['results']:
-            news_ressultslist = get_newsresponse['results']
+        if get_newsresponse['sources']:
+            news_ressultslist = get_newsresponse['sources']
             newsresults = process_newssources(news_ressultslist)
 
     return newsresults
@@ -44,15 +45,20 @@ def process_newssources(news_list):
     for i in news_list:
         id = i.get('id')
         name = i.get('name')
-        overview = i.get('overview')
-        news_image = i.get('news_image')
+        description = i.get('description')
+        category = i.get('category')
         url = i.get('url')
-        person_posted = i.get('person_posted')
-        time_posted = i.get('time_posted')
+        language = i.get('language')
+        country = i.get('country')
 
-        if news_image:
-            news_object = Newssourcemodel(id,name,overview,news_image,url,person_posted,time_posted)
+        if description:
+            news_object = Newssourcemodel(id,name,description,url,category,country,language)
             newsresults.append(news_object)
 
     return newsresults
+
+
+
+
+
 

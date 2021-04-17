@@ -2,14 +2,14 @@
 
 class Newssourcemodel:
 
-    def __init__(self,id,name,overview,news_image,url,person_posted,time_posted):
+    def __init__(self,id,name,description,language,url,category,country):
         self.id = id
         self.name = name
-        self.overview = overview
-        self.news_image = "" + news_image
+        self.description = description
+        self.language = language
         self.url = url
-        self.person_posted = person_posted
-        self.time_posted = time_posted
+        self.category = category
+        self.country = country
 
 
 class Newsarticlemodel:

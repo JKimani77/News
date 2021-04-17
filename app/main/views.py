@@ -21,3 +21,5 @@ def home():
         return redirect(url_for('.search',search_name = searchnews))
     else:
         return render_template('home.html', title = title, business = business, sports = sports, entertainment = entertainment, technology = technology,health = health, science = science)
+
+    

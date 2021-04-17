@@ -1,4 +1,4 @@
-$env:NEWS_API_KEY='c7da1eee3a5f79d86b3e341754a6bb13'
-$env:SECRET_KEY='moringa1234'
+$env:NEWX_API_KEY='b675cc755f5e45a18498e115694b3cf1'
+$env:SECRET_KEY='cthulhu1'
 
 python manage.py server
