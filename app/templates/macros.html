@@ -23,15 +23,15 @@
     {% macro displayNewsList(category) %}
     <div class="container">
         <div class="row">
-            {% for item in category %}
+            {% for i in category %}
             <div class="col-md-6">
                 <div class="card-body">
-                    <li>{{ item.title | truncate(150)}}</li>
-                    <p class="card-header"><b>{{item.name}}</b> ----{{item.description}}<br>
+                    <li>{{ i.title | truncate(150)}}</li>
+                    <p class="card-header"><b>{{i.name}}</b> ----{{i.description}}<br>
 
                         <br>
 
-                        <a href=""><button type="button" class="btn btn-light">Read
+                        <a href="/articles/{{i.id}}"><button type="button" class="btn btn-light">Read
                             Articles</button></a>
                     </p>
                 </div>

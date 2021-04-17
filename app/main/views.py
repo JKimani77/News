@@ -19,7 +19,7 @@ def home():
     return render_template('home.html', title = title, business = business, sports = sports, entertainment = entertainment, technology = technology,health = health, science = science)
 
     
-@main.route('/article/<news_id>')
+@main.route('/articles/<news_id>')
 def articles(news_id):
     newsarticle = getnewsarticles(news_id)
     title = f'{news_id}'

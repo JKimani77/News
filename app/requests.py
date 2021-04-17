@@ -13,7 +13,7 @@ base_url = None
 articles_url = None
 
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,articles_url
     api_key = app.config['NEWX_API_KEY']
     base_url = app.config['NEWX_API_BASE_URL']
     articles_url = app.config['NEWX_ARTICLES_BASE_URL']
@@ -71,7 +71,7 @@ def getnewsarticles(news_id):
         if articles_response['articles']:
             search_articles = articles_response['articles']
             articlesresults = processarticles(search_articles)
-
+    print(articlesresults)
     return articlesresults
 
 
