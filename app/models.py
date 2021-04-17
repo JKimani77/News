@@ -2,11 +2,12 @@
 
 class Newssourcemodel:
 
-    def __init__(self,id,name,overview,news_image,person_posted,time_posted):
+    def __init__(self,id,name,overview,news_image,url,person_posted,time_posted):
         self.id = id
         self.name = name
         self.overview = overview
-        self.news_image = "https://image.tmdb.org/t/p/w500/" + news_image
+        self.news_image = "" + news_image
+        self.url = url
         self.person_posted = person_posted
         self.time_posted = time_posted
 
