@@ -1,6 +1,6 @@
 import urllib.request, json
 import json
-from .models import Newssourcemodel
+from .models import Newssourcemodel,Newsarticlemodel
 
 
 
@@ -58,6 +58,39 @@ def process_newssources(news_list):
     return newsresults
 
 
+def getnewsarticles(news_id):
+
+    get_article_url = articles_url.format(news_id,api_key)
+
+    with urllib.request.urlopen(get_article_url) as url:
+        articles_info = url.read()
+        articles_response = json.loads(articles_info)
+
+        articlesresults = None
+
+        if articles_response['articles']:
+            search_articles = articles_response['articles']
+            articlesresults = processarticles(search_articles)
+
+    return articlesresults
+
+
+def processarticles(my_articles):
+
+    article_list = []
+
+    for item in my_articles:
+        author = item.get('author')
+        title = item.get('title')
+        description = item.get('description')
+        url = item.get('url')
+        urlToImage = item.get('urlToImage')
+
+        if urlToImage:
+            articlesource_obj = Newsarticlemodel(author, title, description, url, urlToImage)
+            article_list.append(articlesource_obj)
+
+    return article_list
 
 
 

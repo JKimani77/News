@@ -16,11 +16,12 @@ class Newsarticlemodel:
 
     all_articles = []
 
-    def __init__(self,article_id, title, article_image,article_description ):
-        self.article_id = article_id
+    def __init__self, author, title, description, url, urlToImage ):
+        self.author = author
         self.title = title
-        self.article_image = article_image
-        self.article_description = article_description
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
 
 
     #classmethod

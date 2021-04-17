@@ -23,3 +23,4 @@ def home():
         return render_template('home.html', title = title, business = business, sports = sports, entertainment = entertainment, technology = technology,health = health, science = science)
 
     
+@main.route
