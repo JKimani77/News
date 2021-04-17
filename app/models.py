@@ -16,7 +16,7 @@ class Newsarticlemodel:
 
     all_articles = []
 
-    def __init__self, author, title, description, url, urlToImage ):
+    def __init__(self, author, title, description, url, urlToImage ):
         self.author = author
         self.title = title
         self.description = description

@@ -1,6 +1,6 @@
 from flask import render_template, request,redirect,url_for
 from . import main
-from ..requests import getnewsources
+from ..requests import getnewsources, getnewsarticles
 from ..models import Newssourcemodel,Newsarticlemodel
 
 
@@ -23,4 +23,8 @@ def home():
         return render_template('home.html', title = title, business = business, sports = sports, entertainment = entertainment, technology = technology,health = health, science = science)
 
     
-@main.route
+@main.route('/article/<news_id>')
+def articles(news_id):
+    newsarticle = getnewsarticles(news_id)
+    title = f'{news_id}'
+    return render_template('articles.html', title = title, newsarticle = newsarticle)
