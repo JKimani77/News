@@ -19,7 +19,9 @@ def configure_request(app):
     articles_url = app.config['NEWX_ARTICLES_BASE_URL']
 
 def getnewsources(category):
-
+    '''
+    function to get response from api endpoint
+    '''
     get_news_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
@@ -36,10 +38,9 @@ def getnewsources(category):
 
 
 def process_newssources(news_list):
-    #funct that process news result
-    #and transform to list of obj
-    #news_list is a list of dictionaries containing news detasils
-    #returns a list of news objects
+    '''
+    function to convert response from endpoint into object
+    '''
     
     newsresults = []
     for i in news_list:
@@ -59,10 +60,14 @@ def process_newssources(news_list):
 
 
 def getnewsarticles(news_id):
+    '''
+    function to get articles from api endpoint
+    '''
 
-    get_article_url = articles_url.format(news_id,api_key)
 
-    with urllib.request.urlopen(get_article_url) as url:
+    get_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(news_id,api_key)
+
+    with urllib.request.urlopen(get_url) as url:
         articles_info = url.read()
         articles_response = json.loads(articles_info)
 
