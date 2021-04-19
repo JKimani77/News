@@ -29,7 +29,7 @@ def getnewsources(category):
         get_newsdata = url.read()
         get_newsresponse = json.loads(get_newsdata)
 
-        print(get_newsresponse)
+        #print(get_newsresponse)
 
         newsresults = None
 
