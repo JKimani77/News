@@ -23,10 +23,13 @@ def getnewsources(category):
     function to get response from api endpoint
     '''
     get_news_url = base_url.format(category,api_key)
+    print(get_news_url)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_newsdata = url.read()
         get_newsresponse = json.loads(get_newsdata)
+
+        print(get_newsresponse)
 
         newsresults = None
 
@@ -66,7 +69,7 @@ def getnewsarticles(news_id):
 
 
     get_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(news_id,api_key)
-
+    print(get_url)
     with urllib.request.urlopen(get_url) as url:
         articles_info = url.read()
         articles_response = json.loads(articles_info)
