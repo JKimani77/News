@@ -5,7 +5,7 @@
 News Highlights  is a web app developed using Flask and the News API. It also allows the user to see various newsources and articles as well as view the newssource on the main website .The application incorporates concepts of unit testing, Objected Oriented Programming and the Flask Framework. 
 
 ## Link to site
-notbbcnews.herokuapp.com/
+[LINK TO SITE](https://notbbcnews.herokuapp.com/)
 
 
 ## Author
